@@ -110,3 +110,7 @@ h1{
 #panel{
     text-align: center;
 }
+.textarea{
+    width: 500px;
+    height: 50px;
+}
