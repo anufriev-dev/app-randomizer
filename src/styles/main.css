@@ -1,0 +1,112 @@
+body{
+    background: rgb(31,31,35);
+    color: white;
+}
+.wrapMain{
+    width: 500px;
+    margin: 0 auto;
+    
+}
+.wrap{
+    height: 200px;
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
+#pole{
+    font-size: 50px;
+    display: inline-block;
+    text-align: center;
+}
+#copy{
+    display: none;
+    color: 'white';
+    padding: 7px;
+    text-align: center;
+    background: #fcba03;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.2s;
+}
+#copy:hover{
+    transition: all 0.2s;
+    background:yellowgreen;
+}
+#copy:active{
+    background:#fcba03;
+}
+
+.backInput,#random{
+    display: inline-block;
+    padding: 10px 7px 7px 7px;
+    text-align: center;
+    background: #bfbfbf;
+    border-radius: 5px;
+    border: none;
+    background:#aaaaaa;
+    transition: all 0.2s;
+    margin: 10px 0;
+}
+
+#random:hover{
+    transition: all 0.2s;
+    background: #aaaeee;
+}
+#random:active{
+    background: #acac;
+}
+.backInput:hover{
+    transition: all 0.2s;
+    background: #aaaeee;
+}
+.backInput:active{
+    background: #acac;
+}
+.fonS{
+    background:  #3c2e47; 
+}
+
+#select{
+    background: none;
+    border:1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.35rem 1rem;
+    font-weight: 900;
+    color: white;
+}
+#select::after{
+    content: "";
+    display: block;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #000 transparent transparent transparent;
+    pointer-events: none;
+
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    z-index: 1;
+    margin-top: -3px;
+}
+#select:focus{
+    outline: 0;
+    border-color: orange;
+}
+.poleInput{
+    width: 74px;
+    height: 16px;
+    margin: 9px 5px;
+    padding: 4px 3px 5px;
+    border-radius: 5px;
+    border: none;
+}
+.changePole{
+    display: inline-block;
+}
+
+#panel{
+    text-align: center;
+}
