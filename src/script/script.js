@@ -4,6 +4,7 @@ $random.addEventListener('click',rand);
 let max = 10;
 
 function rand(){
+    switchVal(fullValForRandomX);
     if(document.querySelector('#changePoleOne') != null){
         const maxInput = document.querySelector('#maxInput').value;
         const minInput = document.querySelector('#minInput').value;
@@ -28,11 +29,23 @@ function rand(){
         let index = Math.round(Math.random() * (arrClear.length - 1));
 
         document.getElementById('pole').innerHTML = Number(arrClear[index]);
-        document.getElementById('copy').style.display = 'inline-block';
+        VisiblBlockCopy();
     }else{
-        let ran = randomValue(max);
-        document.getElementById('pole').innerHTML = ran;
-        document.getElementById('copy').style.display = 'inline-block';
+        if(fullValForRandomX === 0){
+            let $pole = document.getElementById('pole');
+            let ran = randomValue(max);
+            $pole.innerHTML = ran;
+            VisiblBlockCopy();
+        }else{
+            let $pole = document.getElementById('pole');
+            $pole.innerHTML = ' ';
+            for(let i = 0; i < fullValForRandomX; i++){
+                let ran = randomValue(max);
+                $pole.firstChild.nodeValue += ran + " "; 
+                $pole.style.display = 'inline-block';
+                VisiblBlockCopy();
+            }
+        }
     }
 } 
 
@@ -75,9 +88,9 @@ $select.addEventListener('change',(e)=>{
 const htmlList = `
     <div class="changePole" id="changePoleOne">
     <span>От</span>
-    <input id="minInput" class="poleInput" type="text" placeholder="1">
+    <input id="minInput" class="poleInput" type="text" placeholder="1" value="1">
     <span>До</span>
-    <input id="maxInput" class="poleInput" type="text" placeholder="10">
+    <input id="maxInput" class="poleInput" type="text" placeholder="100" value="100">
     <button class="backInput">Назад</button>
     </div>
 `;
@@ -133,4 +146,3 @@ copy.addEventListener('click',()=>{
     let poles = document.querySelector('#pole');
     window.navigator.clipboard.writeText(poles.textContent);
 })
-

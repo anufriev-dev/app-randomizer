@@ -1,12 +1,12 @@
 {
   "name": "app-js",
   "version": "1.0.0",
-  "description": "",
+  "description": "app-randomizer",
   "main": "./src/main.js",
   "scripts": {
     "start": "electron ."
   },
-  "author": "",
+  "author": "GeorgyDev11111",
   "license": "ISC",
   "dependencies": {
     "electron": "^17.0.0"

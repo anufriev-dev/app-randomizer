@@ -5,15 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
+    <script src="script/globalValue.js"></script>
+    <script src="script/globalFunction.js"></script>
     <title>electron</title>
 </head>
 <body>
     <div class="wrapMain">
     <h1>Генератор чисел</h1>
     <div class="wrap">
-        <p id="pole">Тут будет рандомное число</p>
+        <p id="pole">any</p>
         <button id="copy">Копировать</button>
     </div>
+        <div class="wrapRange">
+            <p>получить новую цепочку чисел</p>
+            <input  type="range" id="range" min="1" max="50" value="1" step="1">
+            <p class="poleInputRange">кол-во независимых элементов: 1</p>
+            
+        </div>
     <div id="panel">
         <button id="random">Сгенерировать число</button>
         <select name="" id="select">
@@ -28,6 +36,16 @@
         </select>
     </div>
 </div>
-    <script src="script/script.js"></script>
+        <div class="wrapRange">
+        <label class="infinit">
+            <input class="infinit__checkbox" type="checkbox">
+            исключить повторения
+        </label>
+    </div>
+
+
+    
+    <script  src="script/inputRange.js"></script>
+    <script  src="script/script.js"> </script>
 </body>
 </html>

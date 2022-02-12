@@ -4,8 +4,8 @@ let win;
 
 function createWindow(){
     win = new BrowserWindow({
-        width: 615,
-        height: 475,
+        width: 1000,
+        height: 680,
     });
     win.loadFile(__dirname + '/index.html')
     

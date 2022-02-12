@@ -8,14 +8,14 @@ body{
     
 }
 .wrap{
-    height: 200px;
     text-align: center;
 }
 h1{
     text-align: center;
+    margin: 0;
 }
 #pole{
-    font-size: 50px;
+    font-size: 96px;
     display: inline-block;
     text-align: center;
 }
@@ -113,4 +113,32 @@ h1{
 .textarea{
     width: 500px;
     height: 50px;
+    resize: none;
+}
+.wrapRange{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#range{
+    appearance: none;
+    width: 260px;
+    height: 2px;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(left,royalblue 0%, royalblue 0%, #fff 0%, #fff 100%);
+    z-index: 100;
+    
+}
+#range::-webkit-slider-thumb{
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: rgb(31,31,35) url(../img/slider_hand.png) no-repeat top left;;
+    border-radius: 50%;
+}
+.infinit{
+    display: none;
+    align-items: center;
+    transition:all 0.5s;
 }
