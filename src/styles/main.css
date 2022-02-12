@@ -126,7 +126,7 @@ h1{
     width: 260px;
     height: 2px;
     border-radius: 5px;
-    background: -webkit-linear-gradient(left,royalblue 0%, royalblue 0%, #fff 0%, #fff 100%);
+    background: -webkit-linear-gradient(left,#00ff0d 0%, #00ff0d 0%, #fff 0%, #fff 100%);
     z-index: 100;
     
 }

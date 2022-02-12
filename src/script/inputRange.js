@@ -4,7 +4,7 @@ function range(){
     let maxVal = document.querySelector('#range').max;
     let values = (val * 100) /maxVal;
     let $range = document.querySelector('#range');
-    $range.style.background = `-webkit-linear-gradient(left,royalblue 0%, royalblue ${values + ''}%, #fff ${values + ''}%, #fff 100%)`;
+    $range.style.background = `-webkit-linear-gradient(left,#00ff0d 0%, #00ff0d ${values + ''}%, #fff ${values + ''}%, #fff 100%)`;
     const $poleInputRangeValue = document.querySelector('.poleInputRange');
     $poleInputRangeValue.innerHTML = `кол-во независимых элементов: ${val}`;
     if(val >= 2){
@@ -21,4 +21,3 @@ function range(){
     }
     fullValForRandomX = val;
 }
-

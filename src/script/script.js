@@ -5,46 +5,120 @@ let max = 10;
 
 function rand(){
     switchVal(fullValForRandomX);
+    /*Логика чисел: Из диапазона */
     if(document.querySelector('#changePoleOne') != null){
         const maxInput = document.querySelector('#maxInput').value;
         const minInput = document.querySelector('#minInput').value;
-        let ran = randomValue(Number(maxInput),Number(minInput));
 
-        document.getElementById('pole').innerHTML = ran;
+        if(fullValForRandomX === 0){
+            let ran = randomValue(Number(maxInput),Number(minInput));
+            document.querySelector('#pole').innerHTML = ran;
+        }else{
+            let infinit__checkbox = document.querySelector('.infinit__checkbox');
+            if(infinit__checkbox.checked){
+                let $pole = document.querySelector('#pole');
+                $pole.innerHTML = ' ';
+
+                for(let i = 0; i <fullValForRandomX ;i++){
+                    let ran = randomValue(Number(maxInput),Number(minInput));
+                    $pole.firstChild.nodeValue += ran + " ";
+                }
+                repeatSort($pole);
+
+            }else{
+                document.querySelector('#pole').innerHTML = ' ';
+                for(let i = 0; i <fullValForRandomX ;i++){
+                    let ran = randomValue(Number(maxInput),Number(minInput));
+                    document.querySelector('#pole').firstChild.nodeValue += ran + " ";
+                }
+            }
+        }
         document.getElementById('copy').style.display = 'inline-block';
+        /*Логика чисел: Из списка(textarea) */
     }else if(document.querySelector('#changePoleTwo') != null){
         let $textarea = document.querySelector('.textarea').value;
-        if($textarea == ''){
-            return -1;
-        }
-        let arr = $textarea.split(' ');
-        let filtss = arr.filter(el => el != '');
-        let map = filtss.map(el => Number(el));
-        let arrClear = map.filter(el => !(Number.isNaN(el)));
-        if(arrClear.length === -0 ){
-            document.querySelector('#copy').style.display = 'none';
-            document.getElementById('pole').innerHTML = 'Нет чисел';
-            throw new Error('');
-        }
-        let index = Math.round(Math.random() * (arrClear.length - 1));
 
-        document.getElementById('pole').innerHTML = Number(arrClear[index]);
+        if(fullValForRandomX === 0){
+            let arr = $textarea.split(' ');
+            let filtss = arr.filter(el => el != '');
+            let map = filtss.map(el => Number(el));
+            let arrClear = map.filter(el => !(Number.isNaN(el)));
+            if(arrClear.length === -0 ){
+                document.querySelector('#copy').style.display = 'none';
+                document.getElementById('pole').innerHTML = 'Нет чисел';
+                throw new Error('');
+            }
+            let index = Math.round(Math.random() * (arrClear.length - 1));
+    
+            document.getElementById('pole').innerHTML = Number(arrClear[index]);
+
+        }else{
+            let infinit__checkbox = document.querySelector('.infinit__checkbox');
+            if(infinit__checkbox.checked){
+                let $pole = document.querySelector('#pole')
+                $pole.innerHTML = ' ';
+                for(let i = 0; i < fullValForRandomX ;i++){
+                    let arr = $textarea.split(' ');
+                    let filtss = arr.filter(el => el != '');
+                    let map = filtss.map(el => Number(el));
+                    let arrClear = map.filter(el => !(Number.isNaN(el)));
+                    if(arrClear.length === -0 ){
+                        document.querySelector('#copy').style.display = 'none';
+                        document.getElementById('pole').innerHTML = 'Нет чисел';
+                        throw new Error('');
+                    }
+                    let index = Math.round(Math.random() * (arrClear.length - 1));
+                    document.querySelector('#pole').firstChild.nodeValue += Number(arrClear[index]) + " ";
+                }
+                repeatSort($pole);
+
+            }else{
+                document.querySelector('#pole').innerHTML = ' ';
+                for(let i = 0; i < fullValForRandomX ;i++){
+                    let arr = $textarea.split(' ');
+                    let filtss = arr.filter(el => el != '');
+                    let map = filtss.map(el => Number(el));
+                    let arrClear = map.filter(el => !(Number.isNaN(el)));
+                    if(arrClear.length === -0 ){
+                        document.querySelector('#copy').style.display = 'none';
+                        document.getElementById('pole').innerHTML = 'Нет чисел';
+                        throw new Error('');
+                    }
+                    let index = Math.round(Math.random() * (arrClear.length - 1));
+                    document.querySelector('#pole').firstChild.nodeValue += Number(arrClear[index]) + " ";
+                }
+            }
+        }
         VisiblBlockCopy();
+        /* Логика чисел: Шаблонная*/
     }else{
+       
         if(fullValForRandomX === 0){
             let $pole = document.getElementById('pole');
             let ran = randomValue(max);
             $pole.innerHTML = ran;
             VisiblBlockCopy();
         }else{
-            let $pole = document.getElementById('pole');
-            $pole.innerHTML = ' ';
-            for(let i = 0; i < fullValForRandomX; i++){
-                let ran = randomValue(max);
-                $pole.firstChild.nodeValue += ran + " "; 
-                $pole.style.display = 'inline-block';
-                VisiblBlockCopy();
+            let infinit__checkbox = document.querySelector('.infinit__checkbox');
+            if(infinit__checkbox.checked){
+                let $pole = document.getElementById('pole');
+                $pole.innerHTML = ' ';
+                for(let i = 0; i < fullValForRandomX; i++){
+                    let ran = randomValue(max);
+                    $pole.firstChild.nodeValue += ran + " "; 
+                }
+                repeatSort($pole);
+            }else{
+                let $pole = document.getElementById('pole');
+                $pole.innerHTML = ' ';
+                for(let i = 0; i < fullValForRandomX; i++){
+                    let ran = randomValue(max);
+                    $pole.firstChild.nodeValue += ran + " "; 
+                }
             }
+            document.getElementById('pole').style.display = 'inline-block';
+            VisiblBlockCopy();
+
         }
     }
 } 

@@ -4,8 +4,9 @@ let win;
 
 function createWindow(){
     win = new BrowserWindow({
-        width: 1000,
+        width: 800,
         height: 680,
+        icon: 'src/img/ico.png'
     });
     win.loadFile(__dirname + '/index.html')
     
