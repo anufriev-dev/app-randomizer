@@ -1,3 +1,5 @@
+export let inputRange_j$;
+
 document.querySelector('#range').addEventListener('input', range);
 function range(){
     const val = document.querySelector('#range').value;
@@ -10,6 +12,7 @@ function range(){
     if(val >= 2){
         let $infinit = document.querySelector('.infinit');
         $infinit.style.opacity = '1';
+        $infinit.style.transition = '0.5s;';
         $infinit.style.display = 'inline-block';
 
     }else{
@@ -19,5 +22,5 @@ function range(){
         let infinit__checkbox = document.querySelector('.infinit__checkbox');
         infinit__checkbox.checked = false;
     }
-    fullValForRandomX = val;
+    fullValForRandomX.value = val;
 }

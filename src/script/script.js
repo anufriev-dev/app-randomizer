@@ -1,16 +1,21 @@
+import { VisiblBlockCopy } from "./globalExport.js";
+import { switchVal } from "./globalExport.js";
+import { repeatSort } from "./globalExport.js";
+export let script_j$;
+
 const $random = document.querySelector('#random');
 $random.addEventListener('click',rand);
 
 let max = 10;
 
 function rand(){
-    switchVal(fullValForRandomX);
+    switchVal(fullValForRandomX.value);
     /*Логика чисел: Из диапазона */
     if(document.querySelector('#changePoleOne') != null){
         const maxInput = document.querySelector('#maxInput').value;
         const minInput = document.querySelector('#minInput').value;
 
-        if(fullValForRandomX === 0){
+        if(fullValForRandomX.value === 0){
             let ran = randomValue(Number(maxInput),Number(minInput));
             document.querySelector('#pole').innerHTML = ran;
         }else{
@@ -19,7 +24,7 @@ function rand(){
                 let $pole = document.querySelector('#pole');
                 $pole.innerHTML = ' ';
 
-                for(let i = 0; i <fullValForRandomX ;i++){
+                for(let i = 0; i <fullValForRandomX.value ;i++){
                     let ran = randomValue(Number(maxInput),Number(minInput));
                     $pole.firstChild.nodeValue += ran + " ";
                 }
@@ -27,7 +32,7 @@ function rand(){
 
             }else{
                 document.querySelector('#pole').innerHTML = ' ';
-                for(let i = 0; i <fullValForRandomX ;i++){
+                for(let i = 0; i <fullValForRandomX.value ;i++){
                     let ran = randomValue(Number(maxInput),Number(minInput));
                     document.querySelector('#pole').firstChild.nodeValue += ran + " ";
                 }
@@ -38,7 +43,7 @@ function rand(){
     }else if(document.querySelector('#changePoleTwo') != null){
         let $textarea = document.querySelector('.textarea').value;
 
-        if(fullValForRandomX === 0){
+        if(fullValForRandomX.value === 0){
             let arr = $textarea.split(' ');
             let filtss = arr.filter(el => el != '');
             let map = filtss.map(el => Number(el));
@@ -57,7 +62,7 @@ function rand(){
             if(infinit__checkbox.checked){
                 let $pole = document.querySelector('#pole')
                 $pole.innerHTML = ' ';
-                for(let i = 0; i < fullValForRandomX ;i++){
+                for(let i = 0; i < fullValForRandomX.value ;i++){
                     let arr = $textarea.split(' ');
                     let filtss = arr.filter(el => el != '');
                     let map = filtss.map(el => Number(el));
@@ -74,7 +79,7 @@ function rand(){
 
             }else{
                 document.querySelector('#pole').innerHTML = ' ';
-                for(let i = 0; i < fullValForRandomX ;i++){
+                for(let i = 0; i < fullValForRandomX.value ;i++){
                     let arr = $textarea.split(' ');
                     let filtss = arr.filter(el => el != '');
                     let map = filtss.map(el => Number(el));
@@ -93,7 +98,7 @@ function rand(){
         /* Логика чисел: Шаблонная*/
     }else{
        
-        if(fullValForRandomX === 0){
+        if(fullValForRandomX.value === 0){
             let $pole = document.getElementById('pole');
             let ran = randomValue(max);
             $pole.innerHTML = ran;
@@ -103,7 +108,7 @@ function rand(){
             if(infinit__checkbox.checked){
                 let $pole = document.getElementById('pole');
                 $pole.innerHTML = ' ';
-                for(let i = 0; i < fullValForRandomX; i++){
+                for(let i = 0; i < fullValForRandomX.value; i++){
                     let ran = randomValue(max);
                     $pole.firstChild.nodeValue += ran + " "; 
                 }
@@ -111,7 +116,7 @@ function rand(){
             }else{
                 let $pole = document.getElementById('pole');
                 $pole.innerHTML = ' ';
-                for(let i = 0; i < fullValForRandomX; i++){
+                for(let i = 0; i < fullValForRandomX.value; i++){
                     let ran = randomValue(max);
                     $pole.firstChild.nodeValue += ran + " "; 
                 }

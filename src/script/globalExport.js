@@ -1,9 +1,18 @@
+/* ============================= Webpack ====================================*/
+import { inputRange_j$ } from "./inputRange";
+import { script_j$ } from "./script";
+/* ========================================================================= */
+
+window.fullValForRandomX = {
+    value: 0,
+}
+
 // показать button #copy
-function VisiblBlockCopy(){
+export function VisiblBlockCopy(){
     document.getElementById('copy').style.display = 'inline-block';
 }
 // изменяет шрифт в зависимости от кол-во независимых значений;
-function switchVal(int){
+export function switchVal(int){
     let $pole = document.querySelector('#pole');
     if(int > 29){
 
@@ -17,7 +26,7 @@ function switchVal(int){
     }
 }
 // выполняе сортировку контента, dom-elementa, от повторяющихся чисел 
-function repeatSort($selector){
+export function repeatSort($selector){
     let arrContent = $selector.textContent.split(' ');
     let resultContent = arrContent.filter((el,index) => arrContent.indexOf(el) == index);
     $selector.innerHTML = resultContent.join(' ');
