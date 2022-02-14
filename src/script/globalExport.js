@@ -1,10 +1,11 @@
 /* ============================= Webpack ====================================*/
-import { inputRange_j$ } from "./inputRange";
-import { script_j$ } from "./script";
+import { inputRange_j$ } from "./inputRange.js";
+import { script_j$ } from "./script.js";
 /* ========================================================================= */
 
+/*Эта переменная динамически изменяется при вызове функции range(), она хранит значения range input от 1 до 50*/ 
 window.fullValForRandomX = {
-    value: 0,
+    value: 1,
 }
 
 // показать button #copy
@@ -15,14 +16,17 @@ export function VisiblBlockCopy(){
 export function switchVal(int){
     let $pole = document.querySelector('#pole');
     if(int > 29){
-
         $pole.style.fontSize = '25px';
+        $pole.style.display = 'table-cell';
     }else if(int > 8){
         $pole.style.fontSize = '35px';
+        $pole.style.display = 'table-cell';
     }else if(int > 1){
         $pole.style.fontSize = '50px';
+        $pole.style.display = 'table-cell';
     }else{
         $pole.style.fontSize = '96px';
+        $pole.style.display = 'table-cell';
     }
 }
 // выполняе сортировку контента, dom-elementa, от повторяющихся чисел 

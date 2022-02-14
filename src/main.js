@@ -5,7 +5,7 @@ let win;
 function createWindow(){
     win = new BrowserWindow({
         width: 800,
-        height: 680,
+        height: 690,
         icon: 'src/img/ico.png'
     });
     win.loadFile(__dirname + '/index.html')

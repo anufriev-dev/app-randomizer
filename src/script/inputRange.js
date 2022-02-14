@@ -13,12 +13,13 @@ function range(){
         let $infinit = document.querySelector('.infinit');
         $infinit.style.opacity = '1';
         $infinit.style.transition = '0.5s;';
-        $infinit.style.display = 'inline-block';
+        $infinit.style.pointerEvents = 'auto';
 
     }else{
         let $infinit = document.querySelector('.infinit');
         $infinit.style.opacity = '0';
         $infinit.style.transition = '0.5s;';
+        $infinit.style.pointerEvents = 'none';
         let infinit__checkbox = document.querySelector('.infinit__checkbox');
         infinit__checkbox.checked = false;
     }
