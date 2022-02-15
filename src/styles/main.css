@@ -173,3 +173,14 @@ h1{
 ::selection{
     background: transparent;
 }
+.span{
+    color: #00ff0d;
+}
+.span::selection{
+    background: #fcba03;
+    color: #000;
+}
+.span2::selection{
+    background: #fcba03;
+    color: #000;
+}

@@ -1,6 +1,4 @@
-import { VisiblBlockCopy } from "./globalExport.js";
-import { switchVal } from "./globalExport.js";
-import { repeatSort } from "./globalExport.js";
+import { VisiblBlockCopy,colorPick,colorPickNoValid,repeatSort,switchVal } from "./globalExport.js";
 export let script_j$;
 
 const $random = document.querySelector('#random');
@@ -40,12 +38,12 @@ function rand(){
                     $pole.firstChild.nodeValue += ran + " ";
                 }
                 repeatSort($pole);
-
+                colorPick($pole);
             }else{
                 document.querySelector('#pole').innerHTML = ' ';
                 for(let i = 0; i <fullValForRandomX.value ;i++){
                     let ran = randomValue(Number(maxInput),Number(minInput));
-                    document.querySelector('#pole').firstChild.nodeValue += ran + " ";
+                    colorPickNoValid(ran);
                 }
             }
         }
@@ -73,7 +71,7 @@ function rand(){
         }else{
             let infinit__checkbox = document.querySelector('.infinit__checkbox');
             if(infinit__checkbox.checked){
-                let $pole = document.querySelector('#pole')
+                let $pole = document.querySelector('#pole');
                 $pole.innerHTML = ' ';
                 for(let i = 0; i < fullValForRandomX.value ;i++){
                     let arr = $textarea.split(' ');
@@ -92,7 +90,7 @@ function rand(){
                     document.querySelector('#pole').firstChild.nodeValue += Number(arrClear[index]) + " ";
                 }
                 repeatSort($pole);
-
+                colorPick($pole);
             }else{
                 document.querySelector('#pole').innerHTML = ' ';
                 for(let i = 0; i < fullValForRandomX.value ;i++){
@@ -111,6 +109,15 @@ function rand(){
                             }
                     let index = Math.round(Math.random() * (arrClear.length - 1));
                     document.querySelector('#pole').firstChild.nodeValue += Number(arrClear[index]) + " ";
+                }
+                let arr$pole = document.querySelector('#pole').textContent.split(' ');
+                document.querySelector('#pole').innerHTML = ' ';
+                for(let i = 0; i < arr$pole.length ; i++){
+                    if(i % 2 != 0){
+                        document.querySelector('#pole').insertAdjacentHTML('afterbegin',`<span class="span">${arr$pole[i]}</span> `)
+                    }else{
+                        document.querySelector('#pole').insertAdjacentHTML('afterbegin',`<span class="span2">${arr$pole[i]}</span> `)
+                    } 
                 }
             }
         }
@@ -133,17 +140,16 @@ function rand(){
                     $pole.firstChild.nodeValue += ran + " "; 
                 }
                 repeatSort($pole);
+                colorPick($pole);
             }else{
                 let $pole = document.getElementById('pole');
                 $pole.innerHTML = ' ';
                 for(let i = 0; i < fullValForRandomX.value; i++){
                     let ran = randomValue(max);
-                    $pole.firstChild.nodeValue += ran + " "; 
+                    colorPickNoValid(ran);
                 }
             }
-            // document.getElementById('pole').style.display = 'inline-block';
             VisiblBlockCopy();
-
         }
     }
 } 
