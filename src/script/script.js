@@ -14,15 +14,16 @@ function rand(){
     if(document.querySelector('#changePoleOne') != null){
         const maxInput = document.querySelector('#maxInput').value;
         const minInput = document.querySelector('#minInput').value;
-                    if(maxInput > 10000000){   //если больше то делает инлайн-блок, что в свою очередб применяет св-во owerflow (по умолчанию display: table-cell)
+                    if(maxInput > 10000000 && fullValForRandomX.value != 1){   //если больше то делает инлайн-блок, что в свою очередб применяет св-во owerflow (по умолчанию display: table-cell)
                         document.querySelector('#pole').style.display = 'inline-block';
                     }
-        if(fullValForRandomX.value === 1){
+                    if(minInput > 10000000 && fullValForRandomX.value != 1){ 
+                        document.querySelector('#pole').style.display = 'inline-block';
+                    }
+        if(fullValForRandomX.value == 1){
             let ran = randomValue(Number(maxInput),Number(minInput));
                     if(ran > 10000000){
                         document.querySelector('#pole').style.fontSize = '25px';
-                        document.querySelector('#pole').style.display = 'inline-block';
-                        // document.querySelector('#pole').style.wordWrap = 'break-word';
                     }else{
                         document.querySelector('#pole').style.fontSize = '96px';
                         document.querySelector('#pole').style.display = 'table-cell';
@@ -53,7 +54,7 @@ function rand(){
     }else if(document.querySelector('#changePoleTwo') != null){
         let $textarea = document.querySelector('.textarea').value;
 
-        if(fullValForRandomX.value === 1){
+        if(fullValForRandomX.value == 1){
             let arr = $textarea.split(' ');
             let filtss = arr.filter(el => el != '');
             let map = filtss.map(el => Number(el));
@@ -117,7 +118,7 @@ function rand(){
         /* Логика чисел: Шаблонная*/
     }else{
        
-        if(fullValForRandomX.value === 1){
+        if(fullValForRandomX.value == 1){
             let $pole = document.getElementById('pole');
             let ran = randomValue(max);
             $pole.innerHTML = ran;
@@ -186,9 +187,9 @@ $select.addEventListener('change',(e)=>{
 const htmlList = `
     <div class="changePole" id="changePoleOne">
     <span>От</span>
-    <input id="minInput" class="poleInput" type="text" placeholder="∞" value="1">
+    <input id="minInput" class="poleInput" type="number" placeholder="∞" value="1" onkeydown="return event.keyCode !== 69">
     <span>До</span>
-    <input id="maxInput" class="poleInput" type="text" placeholder="∞" value="100">
+    <input id="maxInput" class="poleInput" type="number" placeholder="∞" value="100" onkeydown="return event.keyCode !== 69">
     <button class="backInput">Назад</button>
     </div>
 `;

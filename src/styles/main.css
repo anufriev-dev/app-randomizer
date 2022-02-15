@@ -29,6 +29,10 @@ h1{
     overflow:auto;
     word-wrap: break-word;
 }
+#pole::selection{
+    background: #fcba03;
+    color: #000;
+}
 #copy{
     display: none;
     color: 'white';
@@ -38,6 +42,7 @@ h1{
     border-radius: 5px;
     border: none;
     transition: all 0.2s;
+    margin-top: 3px;
 }
 #copy:hover{
     transition: all 0.2s;
@@ -113,6 +118,13 @@ h1{
     border-radius: 5px;
     border: none;
 }
+.poleInput::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
+.poleInput::selection{
+    background: #000;
+    color: white;
+}
 .changePole{
     display: inline-block;
 }
@@ -124,6 +136,10 @@ h1{
     width: 500px;
     height: 50px;
     resize: none;
+}
+.textarea::selection{
+    background: #000;
+    color: white;
 }
 .wrapRange{
     display: flex;
@@ -153,4 +169,7 @@ h1{
     display: inline-block;
     align-items: center;
     transition:all 0.5s;
+}
+::selection{
+    background: transparent;
 }

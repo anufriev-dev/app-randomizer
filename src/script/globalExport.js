@@ -19,7 +19,7 @@ export function switchVal(int){
         $pole.style.fontSize = '25px';
         $pole.style.display = 'table-cell';
     }else if(int > 8){
-        $pole.style.fontSize = '35px';
+        $pole.style.fontSize = '30px';
         $pole.style.display = 'table-cell';
     }else if(int > 1){
         $pole.style.fontSize = '50px';
