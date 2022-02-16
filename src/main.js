@@ -1,4 +1,5 @@
 const {app ,BrowserWindow } = require('electron');
+if (require('electron-squirrel-startup')) return app.quit();
 
 let win;
 
@@ -6,10 +7,10 @@ function createWindow(){
     win = new BrowserWindow({
         width: 800,
         height: 690,
-        icon: 'src/img/ico.png'
+        icon: 'src/img/ddd.ico',
     });
     win.loadFile(__dirname + '/index.html')
-    
+    win.setMenuBarVisibility(false);
     // win.webContents.openDevTools();
 
     win.on('closed',() => win = null);
