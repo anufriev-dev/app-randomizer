@@ -1,22 +1,48 @@
 {
-  "name": "app-js",
+  "name": "randomizer",
   "version": "1.0.0",
   "description": "app-randomizer",
-  "main": "./src/main.js",
+  "main": "src/main.js",
   "scripts": {
     "start": "electron .",
-    "dev": "postcss src/styles/main.css > src/dist/main.min.css & npx webpack"
+    "dev": "postcss src/styles/main.css > src/dist/main.min.css & npx webpack",
+    "build": "electron-builder"
   },
   "author": "GeorgyDev11111",
   "license": "ISC",
-  "dependencies": {
-    "electron": "^17.0.0"
-  },
   "devDependencies": {
     "cssnano": "^5.0.17",
+    "electron": "^17.0.1",
+    "electron-builder": "^22.14.13",
     "postcss": "^8.4.6",
     "postcss-cli": "^9.1.0",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "copyright": "Copyright © 2022 Anufriev Georgy",
+    "productName": "Randomizer",
+    "target": "NSIS",
+    "directories": {
+      "output": "build"
+    },
+    "win": {
+      "icon": "src/img/icon.ico"
+    },
+    "nsis": {
+      "language": 1049,
+      "installerLanguages": ["en_US","ru_RU"],
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "src/img/icon.ico",
+      "deleteAppDataOnUninstall": true,
+      "displayLanguageSelector": true,
+      "runAfterFinish": false,
+      "createStartMenuShortcut": false,
+      "oneClick": false
+    }
   }
 }

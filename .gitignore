@@ -2,3 +2,4 @@ node_modules/
 Фичи и Баги.txt
 webpack.config.js
 postcss.config.js
+build/

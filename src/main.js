@@ -7,7 +7,7 @@ function createWindow(){
     win = new BrowserWindow({
         width: 800,
         height: 690,
-        icon: 'src/img/ddd.ico',
+        icon: 'src/img/icon.ico',
     });
     win.loadFile(__dirname + '/index.html')
     win.setMenuBarVisibility(false);
