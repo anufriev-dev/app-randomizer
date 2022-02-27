@@ -60,7 +60,7 @@ function rand(){
             if(arrClear.length === -0 ){
                 document.querySelector('#copy').style.display = 'none';
                 document.getElementById('pole').innerHTML = 'Нет чисел';
-                throw new Error('');
+                return;
             }
             let index = Math.round(Math.random() * (arrClear.length - 1));
                         if(arrClear[0] > 10000000){
@@ -81,7 +81,7 @@ function rand(){
                     if(arrClear.length === -0 ){
                         document.querySelector('#copy').style.display = 'none';
                         document.getElementById('pole').innerHTML = 'Нет чисел';
-                        throw new Error('');
+                        return;
                     }
                                 if(arrClear[i] > 10000000){
                                     document.querySelector('#pole').style.display = 'inline-block';
@@ -180,7 +180,7 @@ $select.addEventListener('change',(e)=>{
             max = 1000000;
             break;
         case '7':
-           option();
+            option();
             break;
         case '8':
             option();
@@ -206,44 +206,37 @@ const htmlTextArea = `
 </div>
 `;
 //Render dom-Elements
-async function option(){
-    let select = document.querySelector('#select').value;
+function option () {
+    
+  let select = document.querySelector('#select').value;
     if(select == 7){
-        await new Promise(resolve => {
-            let $select = document.querySelector('#select');
-            $select.style.display = 'none';
-            let $wrapMain = document.querySelector('#panel');
-            $wrapMain.insertAdjacentHTML('beforeend', htmlList);
-            resolve();
-        });
-    }else if(select == 8){
-        await new Promise(resolve => {
-            let $select = document.querySelector('#select');
-            $select.style.display = 'none';
-            let $wrapMain = document.querySelector('#panel');
-            $wrapMain.insertAdjacentHTML('beforeend', htmlTextArea);
-            resolve();
-        });
+        let $select = document.querySelector('#select');
+        $select.style.display = 'none';
+        let $wrapMain = document.querySelector('#panel');
+        $wrapMain.insertAdjacentHTML('beforeend', htmlList);
+    }else if(select == 8){     
+        let $select = document.querySelector('#select');
+        $select.style.display = 'none';
+        let $wrapMain = document.querySelector('#panel');
+        $wrapMain.insertAdjacentHTML('beforeend', htmlTextArea);
     }
-    await new Promise(resolve => {
-        const backInput = document.querySelector('.backInput');
-        backInput.addEventListener('click', () => {
-        let $changePole = document.querySelector('.changePole');
-        $changePole.remove(backInput);
-        //remove
-        let backinput = document.querySelector('.backInput');
-        if(backinput != null){
-            let $back = document.querySelector('.backInput');
-            $back.remove(backInput);
-        }
-        //
-        let $select_1 = document.querySelector('#select');
-        $select_1.style.display = 'inline-block';
-        $select_1.value = 1;
-        max = 10;
-        resolve();
+
+const backInput = document?.querySelector('.backInput');
+  backInput?.addEventListener('click', () => {
+    let $changePole = document.querySelector('.changePole');
+    $changePole.remove(backInput);
+    //remove
+    let backinput = document.querySelector('.backInput');
+    if(backinput != null){
+    let $back = document.querySelector('.backInput');
+    $back.remove(backInput);
+    }
+    //
+    let $select_1 = document.querySelector('#select');
+    $select_1.style.display = 'inline-block';
+    $select_1.value = 1;
+    max = 10;
     });
-});
 }
 //Button copy
 const copy = document.querySelector('#copy');
