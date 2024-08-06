@@ -1,14 +1,14 @@
 {
-  "name": "randomizer",
+  "name": "app-randomizer",
   "version": "1.0.0",
-  "description": "app-randomizer",
+  "description": "This program generates random numbers",
   "main": "src/main.js",
   "scripts": {
     "start": "electron .",
     "dev": "postcss src/styles/main.css > src/dist/main.min.css & npx webpack",
     "build": "electron-builder"
   },
-  "author": "GeorgyDev11111",
+  "author": "Anufriev Georgy",
   "license": "ISC",
   "devDependencies": {
     "cssnano": "^5.0.17",

@@ -1,4 +1,4 @@
-# App Randomizer &#128640;  ![](https://img.shields.io/github/repo-size/GeorgyDev11111/App-Randomizer_-)
+# App Randomizer &#128640;  ![](https://github.com/anufriev-dev/app-randomizer)
 
 ## Intro ##
 
@@ -8,7 +8,7 @@ To work with the application, you need **Node JS** version `17.2.0` and higher
 
 1. Anywhere run command
 ```sh
-git clone https://github.com/GeorgyDev11111/App-Randomizer_-.git
+git clone https://github.com/anufriev-dev/app-randomizer.git
 ```
 
 2. Go to source project and run Terminal
